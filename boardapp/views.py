@@ -33,8 +33,12 @@ def loginfunc(request):
         if user is not None:
             login(request, user)
             #Redirect to a success page.
+            #return render(request,'signup.html')
             return redirect('signup')
         else:
             # Rerutn an 'invalid login' error message.
             return redirect('login')
     return render(request, 'login.html')
+
+def listfunc(request):
+    return render(request, 'list.html')
